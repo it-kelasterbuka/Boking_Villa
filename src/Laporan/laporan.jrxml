@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d5edf7fe-3d66-425e-a961-cae565b08767">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="22"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     laporan.`id_trans` AS laporan_id_trans,
+     laporan.`id_villa` AS laporan_id_villa,
+     laporan.`id_sewa` AS laporan_id_sewa,
+     laporan.`nama` AS laporan_nama,
+     laporan.`nama_villa` AS laporan_nama_villa,
+     laporan.`harga` AS laporan_harga,
+     laporan.`tgl_awal` AS laporan_tgl_awal,
+     laporan.`tgl_akhir` AS laporan_tgl_akhir,
+     laporan.`hari` AS laporan_hari,
+     laporan.`total` AS laporan_total
+FROM
+     `laporan` laporan]]>
+	</queryString>
+	<field name="laporan_id_trans" class="java.lang.String"/>
+	<field name="laporan_id_villa" class="java.lang.String"/>
+	<field name="laporan_id_sewa" class="java.lang.String"/>
+	<field name="laporan_nama" class="java.lang.String"/>
+	<field name="laporan_nama_villa" class="java.lang.String"/>
+	<field name="laporan_harga" class="java.lang.Integer"/>
+	<field name="laporan_tgl_awal" class="java.sql.Date"/>
+	<field name="laporan_tgl_akhir" class="java.sql.Date"/>
+	<field name="laporan_hari" class="java.lang.Integer"/>
+	<field name="laporan_total" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="160" y="0" width="421" height="62" uuid="263a5d78-ad0b-4f2e-9085-ce4777748d80"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[LAPORAN VILLA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="48d5c08b-2547-40e2-8a95-fe01cdb91596"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee SubTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="94" width="383" height="42" uuid="e2882e48-eb34-4880-9f6b-d1d05292f3af"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor purus gravida arcu aliquam mattis. Donec et nulla libero, ut varius massa. Nulla sed turpis elit. Etiam aliquet mauris a ligula hendrerit in auctor leo lobortis.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="0ed19cc0-4f76-4e4f-9fae-f19e6d392018"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="80" height="15" forecolor="#736343" uuid="a4c4b5bd-cc59-4c37-a122-1cc4aefdf542"/>
+				<text><![CDATA[ID Trans]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="80" y="0" width="80" height="15" forecolor="#736343" uuid="16f51982-cc74-4fee-aac1-0208a4223090"/>
+				<text><![CDATA[ID Villa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="160" y="0" width="80" height="15" forecolor="#736343" uuid="b170f71c-0f11-47fe-b223-907f8564bf1f"/>
+				<text><![CDATA[ID Sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="240" y="0" width="80" height="15" forecolor="#736343" uuid="b652c3fc-d401-44ae-8338-6a20b10cf938"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="320" y="0" width="80" height="15" forecolor="#736343" uuid="524205b4-0827-4323-bd32-842e0651f0eb"/>
+				<text><![CDATA[Nama Villa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="0" width="80" height="15" forecolor="#736343" uuid="0f3a636e-61e2-498f-a309-8ab33f677dbd"/>
+				<text><![CDATA[Harga Villa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="480" y="0" width="80" height="15" forecolor="#736343" uuid="46c0d608-4475-43d6-bffa-0a91ff2f1397"/>
+				<text><![CDATA[Tgl Awal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="560" y="0" width="80" height="15" forecolor="#736343" uuid="116c6193-ec4a-4f37-b03a-aebf3b8e0f4a"/>
+				<text><![CDATA[Tgl Akhir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="640" y="0" width="80" height="15" forecolor="#736343" uuid="b5ba46eb-1e27-4df7-97ec-afafbef14378"/>
+				<text><![CDATA[Hari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="720" y="0" width="80" height="15" forecolor="#736343" uuid="5e0f6780-ec2d-4239-9572-02802c4ec925"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="437fec56-36ec-4b08-a780-a8302d20a36c"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="80" height="15" uuid="d58825e7-25f0-479d-bd26-ba44e96cc386"/>
+					<textFieldExpression><![CDATA[$F{laporan_id_trans}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="80" y="0" width="80" height="15" uuid="0e5441cf-1cc4-47c9-bd39-e22f617f9e02"/>
+					<textFieldExpression><![CDATA[$F{laporan_id_villa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="160" y="0" width="80" height="15" uuid="80ccbd35-9a2a-401d-a31a-12befc1ed92b"/>
+					<textFieldExpression><![CDATA[$F{laporan_id_sewa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="240" y="0" width="80" height="15" uuid="d0e82347-9154-49c8-af0e-cdb8ff1efc1d"/>
+					<textFieldExpression><![CDATA[$F{laporan_nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="320" y="0" width="80" height="15" uuid="de29b2a3-67e6-488d-9663-339783d6f76d"/>
+					<textFieldExpression><![CDATA[$F{laporan_nama_villa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="0" width="80" height="15" uuid="7960a8a4-39df-4dc9-a19a-3ec3199e7297"/>
+					<textFieldExpression><![CDATA[$F{laporan_harga}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="480" y="0" width="80" height="15" uuid="726c5d76-f94a-45e3-8285-8a55741bec4e"/>
+					<textFieldExpression><![CDATA[$F{laporan_tgl_awal}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="560" y="0" width="80" height="15" uuid="c8d178fa-5b4c-44bb-8e3e-549458345462"/>
+					<textFieldExpression><![CDATA[$F{laporan_tgl_akhir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="640" y="0" width="80" height="15" uuid="af6df358-086a-4d03-824b-99f4acc83257"/>
+					<textFieldExpression><![CDATA[$F{laporan_hari}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="720" y="0" width="80" height="15" uuid="f0ff5eef-b2c7-47cd-a1bc-86ef408f7459"/>
+					<textFieldExpression><![CDATA[$F{laporan_total}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="86eb46b2-e5d4-4842-bd12-35274ef41596"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="27eb4550-ccdd-4395-a8ba-c943bafc9d40"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="b8f257f2-a260-4a9f-a07f-a10cd9368777"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="6c59ac97-afb6-4de7-8233-e92b24e235c3"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="355bb9d8-aff4-4413-a84b-b83dae6d6d25"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
